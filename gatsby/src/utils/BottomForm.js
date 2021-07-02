@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import EmailForm from './EmailForm';
 
-import EmailForm from '../../../utils/EmailForm';
-
-const BottomComponentStyle = styled.div`
+const BottomFormStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,13 +12,13 @@ const BottomComponentStyle = styled.div`
   }
 `;
 
-function BottomComponent() {
+function BottomForm() {
   return (
-    <BottomComponentStyle>
+    <BottomFormStyle>
       <h3>Ready to Start?</h3>
       <EmailForm />
-    </BottomComponentStyle>
+    </BottomFormStyle>
   );
 }
 
-export default BottomComponent;
+export default BottomForm;

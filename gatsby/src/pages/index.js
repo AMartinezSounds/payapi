@@ -6,7 +6,7 @@ import SecondComponent from '../components/index-components/second-components/Se
 import ThirdComponent from '../components/index-components/third-components/ThirdComponent';
 import FourthComponent from '../components/index-components/fourth-components/FourthComponent';
 import FifthComponent from '../components/index-components/fifth-components/FifthComponent';
-import BottomComponent from '../components/index-components/bottom-component/BottomComponent';
+import BottomForm from '../utils/BottomForm';
 
 const IndexStyle = styled.div`
   background-image: url(${bg});
@@ -32,7 +32,7 @@ function index() {
       <ThirdComponent />
       <FourthComponent />
       <FifthComponent />
-      <BottomComponent />
+      <BottomForm />
     </IndexStyle>
   );
 }

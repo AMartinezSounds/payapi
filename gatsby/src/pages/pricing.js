@@ -1,9 +1,10 @@
 import React from 'react';
+import PricingComponent from '../components/pricing-components/PricingComponent';
 
 function pricing() {
   return (
     <div>
-      <p>pricing page</p>
+      <PricingComponent />
     </div>
   );
 }
