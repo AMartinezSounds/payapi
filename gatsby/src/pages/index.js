@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 import bg from '../assets/images/bg-pattern-circle.svg';
 import TopComponent from '../components/index-components/top-components/TopComponent';
 import SecondComponent from '../components/index-components/second-components/SecondComponent';
@@ -24,14 +25,17 @@ const IndexStyle = styled.div`
 
 function index() {
   return (
-    <IndexStyle className="pageBackground">
-      <TopComponent />
-      <SecondComponent />
-      <ThirdComponent />
-      <FourthComponent />
-      <FifthComponent />
-      <BottomForm />
-    </IndexStyle>
+    <>
+      <SEO title="Home" />
+      <IndexStyle className="pageBackground">
+        <TopComponent />
+        <SecondComponent />
+        <ThirdComponent />
+        <FourthComponent />
+        <FifthComponent />
+        <BottomForm />
+      </IndexStyle>
+    </>
   );
 }
 
