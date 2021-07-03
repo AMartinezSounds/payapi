@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
 import imgMobile from '../../assets/images/image-team-members-mobile.jpg';
 import imgTablet from '../../assets/images/image-team-members-tablet.jpg';
 import imgDesktop from '../../assets/images/image-team-members-desktop.jpg';
@@ -28,9 +28,11 @@ const ImgStyle = styled.div`
 
 function Img() {
   return (
-    <ImageContainer>
-      <ImgStyle />
-    </ImageContainer>
+    <Fade bottom delay={1000}>
+      <ImageContainer>
+        <ImgStyle />
+      </ImageContainer>
+    </Fade>
   );
 }
 

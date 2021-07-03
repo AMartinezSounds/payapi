@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
 import twoPhones from '../../../assets/images/illustration-simple-ui.svg';
 
 const FourthComponentStyle = styled.div`
@@ -58,16 +58,18 @@ const Text = styled.div`
 
 function FourthComponent() {
   return (
-    <FourthComponentStyle className="flexColumn">
-      <img src={twoPhones} alt="two phones" />
-      <Text>
-        <h3>Simple UI & UX</h3>
-        <p>
-          Our pre-built form is easy to integrate in your app or website’s
-          checkout flow and designed to optimize conversion.
-        </p>
-      </Text>
-    </FourthComponentStyle>
+    <Fade right duration={1700} fraction="0.3">
+      <FourthComponentStyle className="flexColumn">
+        <img src={twoPhones} alt="two phones" />
+        <Text>
+          <h3>Simple UI & UX</h3>
+          <p>
+            Our pre-built form is easy to integrate in your app or website’s
+            checkout flow and designed to optimize conversion.
+          </p>
+        </Text>
+      </FourthComponentStyle>
+    </Fade>
   );
 }
 

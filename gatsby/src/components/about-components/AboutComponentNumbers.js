@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Pulse from 'react-reveal/Pulse';
+import Fade from 'react-reveal/Fade';
 
 const AboutComponentNumbersStyle = styled.div`
   height: 398px;
@@ -68,20 +70,28 @@ const AboutComponentNumbersStyle = styled.div`
 
 function AboutComponentNumbers() {
   return (
-    <AboutComponentNumbersStyle className="flexColumn">
-      <div className="flexColumn numbers">
-        <p>Team Members</p>
-        <h2>300+</h2>
-      </div>
-      <div className="flexColumn numbers">
-        <p>Offices in the UK</p>
-        <h2>3</h2>
-      </div>
-      <div className="flexColumn numbers">
-        <p>Transactions analyzed</p>
-        <h2>10M+</h2>
-      </div>
-    </AboutComponentNumbersStyle>
+    <Fade fraction="0.6">
+      <AboutComponentNumbersStyle className="flexColumn">
+        <Fade delay={500}>
+          <div className="flexColumn numbers">
+            <p>Team Members</p>
+            <h2>300+</h2>
+          </div>
+        </Fade>
+        <Fade delay={800}>
+          <div className="flexColumn numbers">
+            <p>Offices in the UK</p>
+            <h2>3</h2>
+          </div>
+        </Fade>
+        <Fade delay={1100}>
+          <div className="flexColumn numbers">
+            <p>Transactions analyzed</p>
+            <h2>10M+</h2>
+          </div>
+        </Fade>
+      </AboutComponentNumbersStyle>
+    </Fade>
   );
 }
 

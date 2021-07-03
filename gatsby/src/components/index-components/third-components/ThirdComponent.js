@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
 import code from '../../../assets/images/illustration-easy-to-implement.svg';
 
 const ThirdComponentStyles = styled.div`
@@ -57,17 +57,19 @@ const Text = styled.div`
 
 function ThirdComponent() {
   return (
-    <ThirdComponentStyles className="flexColumn">
-      <img src={code} alt="code demonstration" />
-      <Text>
-        <h3>Easy to implement</h3>
-        <p>
-          Our API comes with just a few lines of code. You’ll be up and running
-          in no time. We built our documentation page to integrate payments
-          functionality with ease.
-        </p>
-      </Text>
-    </ThirdComponentStyles>
+    <Fade left duration={1700} fraction="0.3">
+      <ThirdComponentStyles className="flexColumn">
+        <img src={code} alt="code demonstration" />
+        <Text>
+          <h3>Easy to implement</h3>
+          <p>
+            Our API comes with just a few lines of code. You’ll be up and
+            running in no time. We built our documentation page to integrate
+            payments functionality with ease.
+          </p>
+        </Text>
+      </ThirdComponentStyles>
+    </Fade>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Pulse from 'react-reveal/Pulse';
 import EmailForm from './EmailForm';
 
 const BottomFormStyle = styled.div`
@@ -28,10 +29,12 @@ const BottomFormStyle = styled.div`
 
 function BottomForm() {
   return (
-    <BottomFormStyle className="flexColumn">
-      <h3>Ready to Start?</h3>
-      <EmailForm />
-    </BottomFormStyle>
+    <Pulse duration={2000} fraction="0.4">
+      <BottomFormStyle className="flexColumn">
+        <h3>Ready to Start?</h3>
+        <EmailForm />
+      </BottomFormStyle>
+    </Pulse>
   );
 }
 

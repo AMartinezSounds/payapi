@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 import bg from '../assets/images/bg-pattern-circle.svg';
 import AboutComponentNumbers from '../components/about-components/AboutComponentNumbers';
 import AboutComponentStatementTop from '../components/about-components/AboutComponentStatementTop';
@@ -59,26 +60,28 @@ function about() {
   const description4 =
     "We're all passionate about building a more efficient and inclusive financial infrastructure together. At PayAPI, we have diverse backgrounds and skills.";
   return (
-    <AboutStyle className="pageBackground">
-      <h3 className="title-page">
-        We empower innovators by delivering access to the financial system
-      </h3>
-      <AboutComponentStatementTop
-        title1={title1}
-        description1={description1}
-        title2={title2}
-        description2={description2}
-      />
-      <Img />
-      <AboutComponentNumbers />
-      <AboutComponentStatementBottom
-        title3={title3}
-        description3={description3}
-        title4={title4}
-        description4={description4}
-      />
-      <BottomForm />
-    </AboutStyle>
+    <Fade>
+      <AboutStyle className="pageBackground">
+        <h3 className="title-page">
+          We empower innovators by delivering access to the financial system
+        </h3>
+        <AboutComponentStatementTop
+          title1={title1}
+          description1={description1}
+          title2={title2}
+          description2={description2}
+        />
+        <Img />
+        <AboutComponentNumbers />
+        <AboutComponentStatementBottom
+          title3={title3}
+          description3={description3}
+          title4={title4}
+          description4={description4}
+        />
+        <BottomForm />
+      </AboutStyle>
+    </Fade>
   );
 }
 

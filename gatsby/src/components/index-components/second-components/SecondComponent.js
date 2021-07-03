@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
 import bg from '../../../assets/images/bg-pattern-circle.svg';
 import google from '../../../assets/images/companiesHome/google.svg';
 import hP from '../../../assets/images/companiesHome/hewlett-packard.svg';
@@ -81,28 +81,30 @@ const Text = styled.div`
 
 function SecondComponent() {
   return (
-    <SecondComponentStyle className="flexColumn">
-      <CompaniesStyle>
-        <img src={google} alt="google logo" />
-        <img src={hP} alt="hewlett-packard logo" />
-        <img src={microsoft} alt="microsoft logo" />
-        <img src={nvidia} alt="nvidia logo" />
-        <img src={oracle} alt="oracle logo" />
-        <img src={tesla} alt="tesla logo" />
-      </CompaniesStyle>
-      <Text>
-        <h3>Who we work with</h3>
-        <p>
-          Today, millions of people around the world have successfully connected
-          their accounts to apps they love using our API. We provide developers
-          with the tools they need to create easy and accessible experiences for
-          their users.{' '}
-        </p>
-        <Link to="/about" className="aboutUsButton">
-          About Us
-        </Link>
-      </Text>
-    </SecondComponentStyle>
+    <Fade delay={1000}>
+      <SecondComponentStyle className="flexColumn">
+        <CompaniesStyle>
+          <img src={google} alt="google logo" />
+          <img src={hP} alt="hewlett-packard logo" />
+          <img src={microsoft} alt="microsoft logo" />
+          <img src={nvidia} alt="nvidia logo" />
+          <img src={oracle} alt="oracle logo" />
+          <img src={tesla} alt="tesla logo" />
+        </CompaniesStyle>
+        <Text>
+          <h3>Who we work with</h3>
+          <p>
+            Today, millions of people around the world have successfully
+            connected their accounts to apps they love using our API. We provide
+            developers with the tools they need to create easy and accessible
+            experiences for their users.{' '}
+          </p>
+          <Link to="/about" className="aboutUsButton">
+            About Us
+          </Link>
+        </Text>
+      </SecondComponentStyle>
+    </Fade>
   );
 }
 

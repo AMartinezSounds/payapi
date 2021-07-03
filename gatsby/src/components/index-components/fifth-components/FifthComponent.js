@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
 import Card from './Card';
 
 import icon1 from '../../../assets/images/card-images/icon-personal-finances.svg';
@@ -26,23 +26,25 @@ const FifthComponentStyle = styled.div`
 
 function FifthComponent() {
   return (
-    <FifthComponentStyle className="flexColumn">
-      <Card
-        image={icon1}
-        title="Personal Finances"
-        description="Consolidate financial data from multiple sources and categorize transactions up to 2 years of history. Analyze reports to reconcile activities in your account. "
-      />
-      <Card
-        image={icon2}
-        title="Banking & Coverage"
-        description="With our platform, you can speed up account onboarding and support ongoing payments for checking, savings, credit card, and brokerage accounts. "
-      />
-      <Card
-        image={icon3}
-        title="Consumer Payments"
-        description="It’s easier to set up secure bank payments with us through a flow designed with the user experience in mind. Customers could instantly authenticate their account. "
-      />
-    </FifthComponentStyle>
+    <Fade bottom duratin={1700} fraction="0.3">
+      <FifthComponentStyle className="flexColumn">
+        <Card
+          image={icon1}
+          title="Personal Finances"
+          description="Consolidate financial data from multiple sources and categorize transactions up to 2 years of history. Analyze reports to reconcile activities in your account. "
+        />
+        <Card
+          image={icon2}
+          title="Banking & Coverage"
+          description="With our platform, you can speed up account onboarding and support ongoing payments for checking, savings, credit card, and brokerage accounts. "
+        />
+        <Card
+          image={icon3}
+          title="Consumer Payments"
+          description="It’s easier to set up secure bank payments with us through a flow designed with the user experience in mind. Customers could instantly authenticate their account. "
+        />
+      </FifthComponentStyle>
+    </Fade>
   );
 }
 
