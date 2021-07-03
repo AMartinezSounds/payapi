@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import formatMoney from '../../utils/formatMoney';
 
+import check from '../../assets/images/icon-check.svg';
+
 const PricingCardStyle = styled.div`
   width: 100%;
   display: flex;
@@ -52,15 +54,7 @@ const PricingCardStyle = styled.div`
       width: 85%;
     }
   }
-  .pricingButton {
-    padding: 10px 25px;
-    border: 1px solid var(--mirage-blue);
-    border-radius: 50px;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    color: var(--mirage-blue);
-  }
+
   @media (min-width: 700px) {
     .plan {
       height: 180px;
@@ -82,9 +76,49 @@ const PricingCardStyle = styled.div`
       width: 65%;
     }
   }
+  @media (min-width: 1300px) {
+    width: 30%;
+    justify-content: flex-start;
+    .description {
+      text-align: left;
+      width: 100%;
+    }
+    .plan {
+      h3 {
+        font-size: 3rem;
+      }
+      align-items: flex-start;
+      &::after {
+        width: 100%;
+      }
+    }
+    ul {
+      align-items: flex-start;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 `;
 
-function PricingCard({ plan, description, features, price, id }) {
+const IncludedFeatures = styled.li`
+  color: var(--san-juan-blue);
+  background-color: red;
+  img {
+    margin-right: 2rem;
+  }
+`;
+const ExcludedFeatures = styled.li`
+  color: var(--lightSan-juan-blue);
+  background-color: blue;
+`;
+function PricingCard({
+  plan,
+  description,
+  price,
+  includedFeatures,
+  excludedFeatures,
+}) {
   return (
     <PricingCardStyle>
       <div className="plan">
@@ -92,9 +126,15 @@ function PricingCard({ plan, description, features, price, id }) {
         <p className="description">{description}</p>
         <h2>{formatMoney(price)}</h2>
       </div>
-      <ul className="test">
-        {features.map((feature) => (
-          <li>{feature}</li>
+      <ul>
+        {includedFeatures.map((feature) => (
+          <IncludedFeatures>
+            <img src={check} alt="" />
+            {feature}
+          </IncludedFeatures>
+        ))}
+        {excludedFeatures.map((feature) => (
+          <ExcludedFeatures>{feature}</ExcludedFeatures>
         ))}
       </ul>
       <Link className="pricingButton" to="/contact">

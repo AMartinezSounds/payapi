@@ -2,9 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PricingCard from './PricingCard';
 
-import check from '../../assets/images/icon-check.svg';
-import BottomForm from '../../utils/BottomForm';
-
 const PricingComponentStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,57 +11,102 @@ const PricingComponentStyle = styled.div`
   .title-section {
     color: var(--san-juan-blue);
     margin-top: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 12rem;
+  }
+  @media (min-width: 1300px) {
+    width: 77.08%;
+    margin-inline: auto;
+    .title-section {
+      width: 100%;
+      font-size: 5rem;
+    }
   }
 `;
 
 const PricingCardsStyle = styled.div`
   width: 100%;
-  margin-bottom: 4rem;
   @media (min-width: 1000px) {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+  @media (min-width: 1300px) {
+    justify-content: space-between;
+    height: 500px;
+  }
 `;
 
+const features = [
+  'Transactions',
+  'Auth',
+  'Identity',
+  'Investments',
+  'Assets',
+  'Liabilities',
+  'Income',
+];
+
+const maxFeatures = (allFeatures, index) => {
+  const planFeatures = [];
+  for (let i = 0; i < index; i++) {
+    planFeatures.push(allFeatures[i]);
+  }
+  return planFeatures;
+};
+
+const includedFeatures = (plan) => {
+  if (plan === 'Free Plan') {
+    return maxFeatures(features, 3);
+  }
+  if (plan === 'Basic Plan') {
+    return maxFeatures(features, 5);
+  }
+  if (plan === 'Premium Plan') {
+    return maxFeatures(features, 7);
+  }
+};
+
+const excludedFeatures = (all, included) => {
+  const filtered = all.filter((el) => included.indexOf(el) === -1);
+  return filtered;
+};
+
 function PricingComponent() {
-  const features = [
-    'Transactions',
-    'Auth',
-    'Identity',
-    'Investments',
-    'Assets',
-    'Liabilities',
-    'Income',
-  ];
   return (
     <PricingComponentStyle>
       <h3 className="title-section">Pricing</h3>
       <PricingCardsStyle>
         <PricingCard
-          features={features}
           plan="Free Plan"
           description="Build and test using our core set of products with up to 100 API requests "
           price={0}
-          id={1}
+          includedFeatures={includedFeatures('Free Plan')}
+          excludedFeatures={excludedFeatures(
+            features,
+            includedFeatures('Free Plan')
+          )}
         />
         <PricingCard
-          features={features}
           plan="Basic Plan"
           description="Launch your project with unlimited requests and no contractual minimums"
           price={24900}
-          id={2}
+          includedFeatures={includedFeatures('Basic Plan')}
+          excludedFeatures={excludedFeatures(
+            features,
+            includedFeatures('Basic Plan')
+          )}
         />
         <PricingCard
-          features={features}
           plan="Premium Plan"
           description="Get tailored solutions, volume pricing, and dedicated support for your team"
           price={49900}
-          id={3}
+          includedFeatures={includedFeatures('Premium Plan')}
+          excludedFeatures={excludedFeatures(
+            features,
+            includedFeatures('Premium Plan')
+          )}
         />
       </PricingCardsStyle>
-      <BottomForm />
     </PricingComponentStyle>
   );
 }

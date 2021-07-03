@@ -21,6 +21,33 @@ const GlobalStyles = createGlobalStyle`
 	 list-style: none;
 	 padding-left: 0;
  }
+ textarea {
+	 resize: none;
+	 padding: 0rem 1.5rem !important; 
+	 height: 100px;
+ }
+ input[type=checkbox] {
+    transform: scale(1.7);
+    background: transparent;
+    margin-right: 2rem;
+
+}
+ input:invalid {
+	 border: 1px solid red;
+ }
+ label {
+	 font-size: 1.3rem;
+	 color: var(--lightSan-juan-blue);
+ }
+
+ .checkbox-with-label {
+	 height: 3rem;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 80%;
+ }
+ 
  .button {
 	 cursor: pointer;
 	 color: var(--water-white);
@@ -33,6 +60,21 @@ const GlobalStyles = createGlobalStyle`
 		 background-color: var(--charm-pink);
 	 }
 }
+
+.pricingButton {
+    padding: 10px 25px;
+    border: 1px solid var(--san-juan-blue);
+    border-radius: 50px;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    color: var(--san-juan-blue);
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: var(--san-juan-blue);
+      color: var(--water-white);
+    }
+  }
  .emailInput {
     font-size: 1.5em;
     border: none;
@@ -57,6 +99,10 @@ const GlobalStyles = createGlobalStyle`
 		background-color: var(--charm-pink);
 	}
  }
+  button.pricingButton{
+	margin-left: auto;
+	margin-right: auto;
+  }
  .aboutUsButton {
 	 border-radius: 50px;
 	 font-size: 1.7rem;
@@ -73,7 +119,35 @@ const GlobalStyles = createGlobalStyle`
 	 color: red;
 	 position: absolute;
  }
+ .contactForm {
+	 margin-inline: auto;
+	 height: 500px;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: space-between;
+	 align-items: center;
+ }
+ .contactInput {
+	background: transparent;
+	margin-top: 0;
+	padding: 1.5rem 1.5rem;
+	font-size: 1.5rem;
+	width: 100%;
+	min-width: 325px;
+	box-sizing: border-box;
+	border: 0;
+	border-bottom: 1px solid var(--lightSan-juan-blue);
+	&:active, &:focus {
+		outline: none;
+	}
+ }
  @media(min-width: 700px){
+	.checkbox-with-label {
+	 height: 3rem;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+ }
 	.inLine {
    	 display: flex;
 	 position: relative;
@@ -90,9 +164,29 @@ const GlobalStyles = createGlobalStyle`
 		right: 0;
 		height: 100%;
 	}
+	.contactInput{
+		min-width: 445px;
+	}
  }
  @media(min-width: 1300px){
-	 
+	.pricingButton {
+      	   padding: 10px 35px;
+           font-size: 1.8rem;
+           margin-left: 0;
+           margin-right: auto;
+        }
+	.contactForm {
+		width: 50%;
+		height: 600px;
+		align-items: flex-start;
+	}
+	label {
+		margin-left: 0;
+	}
+	button.pricingButton{
+	margin-left: 0;
+	margin-right: auto;
+  }
  }
 `;
 

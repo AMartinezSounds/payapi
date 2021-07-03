@@ -7,9 +7,6 @@ const CardStyle = styled.div`
   flex-direction: column;
   align-items: center;
   margin-inline: auto;
-  @media (min-width: 700px) {
-    height: 100%;
-  }
 `;
 
 const Text = styled.div`
@@ -21,6 +18,7 @@ const Text = styled.div`
   }
   p {
     text-align: center;
+    line-height: 2rem;
   }
   @media (min-width: 700px) {
     margin-top: 3rem;
@@ -28,12 +26,11 @@ const Text = styled.div`
       font-size: 2.2rem;
     }
     p {
-      line-height: 2rem;
+      width: 80%;
     }
   }
   @media (min-width: 1000px) {
     p {
-      line-height: 2.2rem;
       width: 75%;
     }
   }

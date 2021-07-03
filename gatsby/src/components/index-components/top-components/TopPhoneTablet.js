@@ -6,7 +6,6 @@ import EmailForm from '../../../utils/EmailForm';
 import phone from '../../../assets/images/illustration-phone-mockup.inline.svg';
 
 const TopPhoneTabletStyle = styled.div`
-  height: 1000px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -38,10 +37,10 @@ const TopPhoneTabletStyle = styled.div`
 `;
 
 const Formulary = styled.div`
-  margin-inline: auto;
   width: 82.9%;
   min-width: 327px;
-  height: 350px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

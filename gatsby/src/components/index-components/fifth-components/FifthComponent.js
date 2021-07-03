@@ -14,6 +14,7 @@ const FifthComponentStyle = styled.div`
   justify-content: space-evenly;
   @media (min-width: 700px) {
     height: 311px;
+    margin-block: 8rem;
     flex-direction: row;
     align-items: center;
   }

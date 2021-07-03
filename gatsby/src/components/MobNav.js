@@ -6,12 +6,14 @@ const MobNavStyle = styled.nav`
   position: absolute;
   width: 100vw;
   height: 90vh;
+  overflow-y: hidden;
   top: ${(props) => (props.show === 'false' ? '-100vh' : '10vh')};
   transition: top 0.4s ease;
   background-color: var(--mirage-blue);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  z-index: 4;
 
   ul {
     margin-top: 0;
@@ -52,7 +54,11 @@ function MobNav({ crossButton, setCrossButton }) {
             Contact
           </Link>
         </li>
-        <Link className="button" to="/about">
+        <Link
+          className="button"
+          onClick={() => setCrossButton('false')}
+          to="/contact"
+        >
           Schedule a Demo
         </Link>
       </ul>

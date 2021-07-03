@@ -59,7 +59,7 @@ function Nav({ crossButton, setCrossButton }) {
   return (
     <NavStyle>
       <div className="logo-and-navbar">
-        <Link to="/">
+        <Link to="/" onClick={() => setCrossButton('false')}>
           <img className="logo" src={logo} alt="logo" />
         </Link>
         <ul>
