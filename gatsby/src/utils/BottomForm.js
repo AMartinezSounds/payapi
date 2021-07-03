@@ -3,29 +3,32 @@ import styled from 'styled-components';
 import EmailForm from './EmailForm';
 
 const BottomFormStyle = styled.div`
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-inline: auto;
-  margin-block: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   h3 {
+    font-size: 5rem;
     margin-bottom: 2rem;
     color: var(--san-juan-blue);
   }
   @media (min-width: 700px) {
-    margin-block: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
   }
 
   @media (min-width: 1300px) {
-    width: 77.08%;
+    width: 90.08%;
+    max-width: 1110px;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 `;
 
 function BottomForm() {
   return (
-    <BottomFormStyle>
+    <BottomFormStyle className="flexColumn">
       <h3>Ready to Start?</h3>
       <EmailForm />
     </BottomFormStyle>

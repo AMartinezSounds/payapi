@@ -9,8 +9,6 @@ import FifthComponent from '../components/index-components/fifth-components/Fift
 import BottomForm from '../utils/BottomForm';
 
 const IndexStyle = styled.div`
-  background-image: url(${bg});
-  background-repeat: no-repeat;
   background-position: center -500px;
   overflow-x: hidden;
   @media (min-width: 700px) {
@@ -26,7 +24,7 @@ const IndexStyle = styled.div`
 
 function index() {
   return (
-    <IndexStyle>
+    <IndexStyle className="pageBackground">
       <TopComponent />
       <SecondComponent />
       <ThirdComponent />

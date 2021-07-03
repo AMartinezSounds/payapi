@@ -9,8 +9,6 @@ import icon3 from '../../../assets/images/card-images/icon-consumer-payments.svg
 
 const FifthComponentStyle = styled.div`
   height: 934px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   @media (min-width: 700px) {
     height: 311px;
@@ -20,13 +18,15 @@ const FifthComponentStyle = styled.div`
   }
   @media (min-width: 1000px) {
     width: 77.08%;
-    margin-inline: auto;
+    margin-block: 0rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
 function FifthComponent() {
   return (
-    <FifthComponentStyle>
+    <FifthComponentStyle className="flexColumn">
       <Card
         image={icon1}
         title="Personal Finances"

@@ -18,8 +18,6 @@ const MobNavStyle = styled.nav`
   ul {
     margin-top: 0;
     height: 50vh;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.5rem;
@@ -38,7 +36,7 @@ const MobNavStyle = styled.nav`
 function MobNav({ crossButton, setCrossButton }) {
   return (
     <MobNavStyle show={crossButton}>
-      <ul>
+      <ul className="flexColumn">
         <li>
           <Link to="/pricing" onClick={() => setCrossButton('false')}>
             Pricing
@@ -55,7 +53,7 @@ function MobNav({ crossButton, setCrossButton }) {
           </Link>
         </li>
         <Link
-          className="button"
+          className="linkButton button"
           onClick={() => setCrossButton('false')}
           to="/contact"
         >

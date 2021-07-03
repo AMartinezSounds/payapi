@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import EmailForm from '../../../utils/EmailForm';
@@ -7,8 +8,6 @@ import phone from '../../../assets/images/illustration-phone-mockup.inline.svg';
 
 const TopPhoneTabletStyle = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
   img {
     margin-left: 4rem;
     object-fit: contain;
@@ -17,7 +16,7 @@ const TopPhoneTabletStyle = styled.div`
   p {
     color: var(--lightSan-juan-blue);
   }
-  span {
+  a {
     color: var(--san-juan-blue);
   }
   @media (min-width: 500px) {
@@ -39,7 +38,8 @@ const TopPhoneTabletStyle = styled.div`
 const Formulary = styled.div`
   width: 82.9%;
   min-width: 327px;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -47,6 +47,7 @@ const Formulary = styled.div`
   justify-content: space-between;
   h3 {
     text-align: center;
+    margin-bottom: 3rem;
     width: 75%;
   }
   @media (min-width: 700px) {
@@ -60,13 +61,13 @@ const Formulary = styled.div`
 
 function TopPhoneTablet() {
   return (
-    <TopPhoneTabletStyle>
+    <TopPhoneTabletStyle className="flexColumn">
       <img src={phone} alt="phone" />
       <Formulary>
         <h3>Start building with our APIs for absolutely free.</h3>
         <EmailForm />
         <p>
-          Have any questions? <span>Contact Us</span>
+          Have any questions? <Link to="/contact">Contact Us</Link>
         </p>
       </Formulary>
     </TopPhoneTabletStyle>

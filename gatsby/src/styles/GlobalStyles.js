@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import bg from '../assets/images/bg-pattern-circle.svg';
 
 const GlobalStyles = createGlobalStyle`
  :root {
@@ -40,46 +41,56 @@ const GlobalStyles = createGlobalStyle`
 	 color: var(--lightSan-juan-blue);
  }
 
- .checkbox-with-label {
-	 height: 3rem;
+ .pageBackground {
+	background-image: url(${bg});
+  	background-repeat: no-repeat;
+  	background-position: 200px -600px;
+ }
+
+ .flexColumn {
 	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 width: 80%;
+	 flex-direction: column;
+ }
+
+ .linkButton {
+	 font-size: 1.5rem;
+	 border-radius: 50px;
+	 cursor: pointer;
+	 transition: all 0.3s linear;
+	 background: transparent;
+ }
+
+ .checkbox-with-label {
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
  }
  
  .button {
-	 cursor: pointer;
-	 color: var(--water-white);
-	 background-color: var(--dark-pink);
-	 border-radius: 50px;
-	 padding: 15px 45px;
-	 font-size: 1.5em;
-	 transition: all 0.3s linear;
-	 &:hover {
-		 background-color: var(--charm-pink);
-	 }
+	color: var(--water-white);
+	background-color: var(--dark-pink);
+	padding: 15px 45px;
+	&:hover {
+		background-color: var(--charm-pink);
+	}
 }
 
-.pricingButton {
-    padding: 10px 25px;
-    border: 1px solid var(--san-juan-blue);
+  .pricingButton {
+      padding: 10px 25px;
+      border: 1px solid var(--san-juan-blue);
+      color: var(--san-juan-blue);
+        &:hover {
+        background-color: var(--san-juan-blue);
+        color: var(--water-white);
+       }
+   }
+ .emailInput {
+    border: none;
     border-radius: 50px;
     font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    color: var(--san-juan-blue);
-    transition: all 0.3s linear;
-    &:hover {
-      background-color: var(--san-juan-blue);
-      color: var(--water-white);
-    }
-  }
- .emailInput {
-    font-size: 1.5em;
-    border: none;
     padding: 15px 45px;
-    border-radius: 50px;
     margin-bottom: 2rem;
     position: relative;
     &:focus {
@@ -88,13 +99,9 @@ const GlobalStyles = createGlobalStyle`
   }
   .buttonEmail {
 	border: none;
-	cursor: pointer;
 	color: var(--water-white);
 	background-color: var(--dark-pink);
-	border-radius: 50px;
 	padding: 15px 82px;
-	font-size: 1.5em;
-	transition: all 0.3s linear;
 	&:hover {
 		background-color: var(--charm-pink);
 	}
@@ -122,8 +129,6 @@ const GlobalStyles = createGlobalStyle`
  .contactForm {
 	 margin-inline: auto;
 	 height: 500px;
-	 display: flex;
-	 flex-direction: column;
 	 justify-content: space-between;
 	 align-items: center;
  }
@@ -141,6 +146,11 @@ const GlobalStyles = createGlobalStyle`
 		outline: none;
 	}
  }
+ @media(min-width: 500px){
+	 .pageBackground{
+		background-position: 300px -600px;
+	 }
+ }
  @media(min-width: 700px){
 	.checkbox-with-label {
 	 height: 3rem;
@@ -152,6 +162,9 @@ const GlobalStyles = createGlobalStyle`
    	 display: flex;
 	 position: relative;
   	}
+	.pageBackground {
+		background-position: 400px -500px;
+	}
 	.emailInput {
 		margin-bottom: 0;
 		padding: 15px 30px;
@@ -168,7 +181,11 @@ const GlobalStyles = createGlobalStyle`
 		min-width: 445px;
 	}
  }
+
  @media(min-width: 1300px){
+	 .pageBackground {
+		background-position: 800px -600px;
+	 }
 	.pricingButton {
       	   padding: 10px 35px;
            font-size: 1.8rem;

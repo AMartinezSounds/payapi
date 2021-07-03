@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import twoPhones from '../../../assets/images/illustration-simple-ui.svg';
-import bg from '../../../assets/images/bg-pattern-circle.svg';
 
 const FourthComponentStyle = styled.div`
   width: 87.47%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   img {
     display: block;
     object-fit: cover;
@@ -26,10 +24,6 @@ const FourthComponentStyle = styled.div`
     height: 700px;
     flex-direction: row-reverse;
     width: 77.08%;
-    /* background-image: url(${bg});
-    background-size: 700px;
-    background-repeat: no-repeat;
-    background-position: 1000px center; */
     img {
       margin-left: 0;
     }
@@ -37,12 +31,16 @@ const FourthComponentStyle = styled.div`
 `;
 
 const Text = styled.div`
+  h3 {
+    color: var(--san-juan-blue);
+  }
   h3,
   p {
     text-align: center;
   }
   p {
-    line-height: 2.5rem;
+    line-height: 2rem;
+    color: var(--lightSan-juan-blue);
   }
   @media (min-width: 500px) {
     margin-top: -3rem;
@@ -60,7 +58,7 @@ const Text = styled.div`
 
 function FourthComponent() {
   return (
-    <FourthComponentStyle>
+    <FourthComponentStyle className="flexColumn">
       <img src={twoPhones} alt="two phones" />
       <Text>
         <h3>Simple UI & UX</h3>

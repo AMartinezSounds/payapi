@@ -6,14 +6,14 @@ import { ImCross } from 'react-icons/im';
 import logo from '../assets/images/logo.svg';
 
 const NavStyle = styled.nav`
-  top: 20px;
   display: flex;
   width: 82.9%;
   min-width: 311px;
   height: 10vh;
   justify-content: space-between;
   align-items: center;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   .logo-and-navbar {
     display: flex;
   }
@@ -37,7 +37,8 @@ const NavStyle = styled.nav`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-inline: auto;
+      margin-left: auto;
+      margin-right: auto;
       width: 50%;
       li {
         a:hover {
@@ -74,7 +75,7 @@ function Nav({ crossButton, setCrossButton }) {
           </li>
         </ul>
       </div>
-      <Link className="button" to="/about">
+      <Link className="linkButton button" to="/about">
         Schedule a Demo
       </Link>
       <Icon

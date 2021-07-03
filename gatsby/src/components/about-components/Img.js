@@ -13,9 +13,8 @@ const ImgStyle = styled.div`
   background-size: cover;
   width: 375px;
   height: 300px;
-  @media (min-width: 500px) {
-    margin-inline: auto;
-  }
+  margin-left: auto;
+  margin-right: auto;
   @media (min-width: 700px) {
     background-image: url(${imgTablet});
     width: 769px;

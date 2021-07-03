@@ -10,9 +10,8 @@ import tesla from '../../assets/images/companies/tesla.svg';
 
 const CompaniesComponentStyle = styled.div`
   height: 320px;
-  margin-block: 4rem;
-  display: flex;
-  flex-direction: column;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   justify-content: space-between;
 `;
 
@@ -40,7 +39,8 @@ const Text = styled.div`
     line-height: 3.5rem;
     text-align: center;
     width: 340px;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media (min-width: 700px) {
     h3 {
@@ -56,7 +56,7 @@ const Text = styled.div`
 
 function Companies() {
   return (
-    <CompaniesComponentStyle>
+    <CompaniesComponentStyle className="flexColumn">
       <Text>
         <h3>Join the thousands of innovators already building with us</h3>
       </Text>

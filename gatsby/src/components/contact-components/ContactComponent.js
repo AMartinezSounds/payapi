@@ -10,13 +10,15 @@ const ContactComponentStyle = styled.div`
     width: 327px;
     line-height: 3.5rem;
     height: 150px;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     padding-top: 3rem;
   }
   @media (min-width: 1300px) {
     width: 77.08%;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
     .title-page {
       padding-top: 8rem;
       font-size: 5rem;

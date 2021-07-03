@@ -14,11 +14,6 @@ function EmailForm() {
       onSubmit={onSubmit}
       validate={(values) => {
         const errors = {};
-        if (!values.email) {
-          errors.email = 'Enter an email';
-        } else if (!values.email.includes('@')) {
-          errors.email = 'Enter a valid email';
-        }
         return errors;
       }}
       render={({ handleSubmit, pristine, submitting }) => (
@@ -46,7 +41,7 @@ function EmailForm() {
               )}
             </Field>
           </div>
-          <button className="buttonEmail" type="submit">
+          <button className="linkButton buttonEmail" type="submit">
             Schedule a Demo
           </button>
         </form>

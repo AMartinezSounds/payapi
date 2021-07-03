@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StatementStyle = styled.div`
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 86%;
   text-align: center;
-  margin-block: 6rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   h3 {
     color: var(--san-juan-blue);
     font-size: 2.2rem;
@@ -28,7 +30,8 @@ const StatementStyle = styled.div`
     }
   }
   @media (min-width: 1000px) {
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 70%;
   }
 `;

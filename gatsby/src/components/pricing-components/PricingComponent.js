@@ -3,36 +3,30 @@ import styled from 'styled-components';
 import PricingCard from './PricingCard';
 
 const PricingComponentStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12rem;
+  min-width: 327px;
+  width: 87.2%;
+  margin-left: auto;
+  margin-right: auto;
   .title-section {
     color: var(--san-juan-blue);
-    margin-top: 4rem;
-    margin-bottom: 12rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
-  @media (min-width: 1300px) {
-    width: 77.08%;
-    margin-inline: auto;
+  @media (min-width: 1000px) {
     .title-section {
-      width: 100%;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
       font-size: 5rem;
+      text-align: left;
     }
   }
 `;
 
 const PricingCardsStyle = styled.div`
-  width: 100%;
   @media (min-width: 1000px) {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  @media (min-width: 1300px) {
     justify-content: space-between;
-    height: 500px;
   }
 `;
 

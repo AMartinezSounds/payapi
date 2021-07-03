@@ -2,116 +2,99 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import formatMoney from '../../utils/formatMoney';
-
 import check from '../../assets/images/icon-check.svg';
 
-const PricingCardStyle = styled.div`
+const line = `
+  content: '';
+  background-color: var(--lightSan-juan-blue);
+  height: 1px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h3 {
-    color: var(--dark-pink) !important;
-    font-size: 2rem;
-  }
-  h2 {
-    color: var(--san-juan-blue);
-  }
-  .description {
-    display: none;
-    text-align: center;
-    color: var(--lightSan-juan-blue);
-    width: 40%;
-    line-height: 2.3rem;
-  }
-  .plan {
-    height: 125px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-    width: 100%;
-    &::after {
-      content: '';
-      background-color: var(--lightSan-juan-blue);
-      height: 1px;
-      width: 85%;
-    }
-  }
-  ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 244px;
-    &::after {
-      content: '';
-      margin-top: 2rem;
-      background-color: var(--lightSan-juan-blue);
-      height: 1px;
-      width: 85%;
-    }
-  }
+  max-width: 500px;
+  margin-block: 2rem;
+`;
 
-  @media (min-width: 700px) {
-    .plan {
-      height: 180px;
-      &::after {
-        width: 50%;
-      }
+const PricingCardStyle = styled.div`
+  .plan {
+    height: 185px;
+    justify-content: space-around;
+    align-items: center;
+    h3 {
+      color: var(--dark-pink);
+      font-size: 2.5rem;
     }
     .description {
-      display: block;
+      color: var(--lightSan-juan-blue);
+      width: 50%;
+      text-align: center;
+      line-height: 2rem;
+      display: none;
     }
-    ul {
-      &::after {
-        width: 50%;
+    h2 {
+      color: var(--san-juan-blue);
+    }
+  }
+  .list-of-features-container {
+    justify-content: center;
+    align-items: center;
+    &::after,
+    &::before {
+      ${line}
+    }
+  }
+  .list-of-features {
+    width: 50%;
+    max-width: 200px;
+    height: 244px;
+    font-size: 1.3rem;
+    justify-content: space-between;
+    img {
+      width: 2rem;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 700px) {
+    .plan {
+      .description {
+        display: block;
       }
     }
   }
   @media (min-width: 1000px) {
-    .description {
-      width: 65%;
-    }
-  }
-  @media (min-width: 1300px) {
     width: 30%;
-    justify-content: flex-start;
-    .description {
-      text-align: left;
-      width: 100%;
-    }
     .plan {
-      h3 {
-        font-size: 3rem;
-      }
       align-items: flex-start;
-      &::after {
-        width: 100%;
+      .description {
+        width: 90%;
+        text-align: left;
       }
     }
-    ul {
+    .list-of-features-container {
       align-items: flex-start;
-      &::after {
-        width: 100%;
-      }
     }
   }
 `;
 
 const IncludedFeatures = styled.li`
   color: var(--san-juan-blue);
-  background-color: red;
-  img {
-    margin-right: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  .check {
+    justify-self: center;
   }
 `;
-const ExcludedFeatures = styled.li`
+
+const ExcludedFeatures = styled(IncludedFeatures)`
   color: var(--lightSan-juan-blue);
-  background-color: blue;
+  .invisibility {
+    visibility: hidden;
+  }
 `;
+
 function PricingCard({
   plan,
   description,
@@ -121,25 +104,32 @@ function PricingCard({
 }) {
   return (
     <PricingCardStyle>
-      <div className="plan">
+      <div className="flexColumn plan">
         <h3>{plan}</h3>
         <p className="description">{description}</p>
         <h2>{formatMoney(price)}</h2>
       </div>
-      <ul>
-        {includedFeatures.map((feature) => (
-          <IncludedFeatures>
-            <img src={check} alt="" />
-            {feature}
-          </IncludedFeatures>
-        ))}
-        {excludedFeatures.map((feature) => (
-          <ExcludedFeatures>{feature}</ExcludedFeatures>
-        ))}
-      </ul>
-      <Link className="pricingButton" to="/contact">
-        Request Access
-      </Link>
+      <div className="flexColumn list-of-features-container">
+        <ul className="flexColumn list-of-features">
+          {includedFeatures.map((feature) => (
+            <IncludedFeatures>
+              <img className="check" src={check} alt="check icon" />
+              {feature}
+            </IncludedFeatures>
+          ))}
+          {excludedFeatures.map((feature) => (
+            <ExcludedFeatures>
+              <img className="invisibility" src={check} alt="check icon" />
+              {feature}
+            </ExcludedFeatures>
+          ))}
+        </ul>
+      </div>
+      <div className="button-container">
+        <Link className="linkButton pricingButton" to="/contact">
+          Request Access
+        </Link>
+      </div>
     </PricingCardStyle>
   );
 }

@@ -39,6 +39,7 @@
     "react-final-form": "^6.5.3",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
+    "react-reveal": "^1.2.2",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

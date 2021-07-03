@@ -25,7 +25,7 @@ function ContactForm() {
         }
       }}
       render={({ handleSubmit, values, pristine, submitting }) => (
-        <form onSubmit={handleSubmit} className="contactForm">
+        <form onSubmit={handleSubmit} className="flexColumn contactForm">
           <div>
             <Field name="name">
               {({ input, meta }) => (
@@ -123,7 +123,7 @@ function ContactForm() {
             </label>
           </div>
           <button
-            className="pricingButton"
+            className="linkButton pricingButton"
             type="submit"
             disabled={pristine || submitting}
           >

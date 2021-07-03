@@ -5,10 +5,9 @@ import code from '../../../assets/images/illustration-easy-to-implement.svg';
 
 const ThirdComponentStyles = styled.div`
   width: 87.47%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   img {
     display: block;
     object-fit: cover;
@@ -31,12 +30,16 @@ const ThirdComponentStyles = styled.div`
 `;
 
 const Text = styled.div`
+  h3 {
+    color: var(--san-juan-blue);
+  }
   h3,
   p {
     text-align: center;
   }
   p {
-    line-height: 2.5rem;
+    line-height: 2rem;
+    color: var(--lightSan-juan-blue);
   }
   @media (min-width: 500px) {
     margin-top: -3rem;
@@ -54,7 +57,7 @@ const Text = styled.div`
 
 function ThirdComponent() {
   return (
-    <ThirdComponentStyles>
+    <ThirdComponentStyles className="flexColumn">
       <img src={code} alt="code demonstration" />
       <Text>
         <h3>Easy to implement</h3>

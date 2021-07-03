@@ -17,8 +17,6 @@ const SecondComponentStyle = styled.div`
   background-position: -70px -300px;
   background-repeat: no-repeat;
   background-color: var(--mirage-blue);
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   @media (min-width: 700px) {
@@ -83,7 +81,7 @@ const Text = styled.div`
 
 function SecondComponent() {
   return (
-    <SecondComponentStyle>
+    <SecondComponentStyle className="flexColumn">
       <CompaniesStyle>
         <img src={google} alt="google logo" />
         <img src={hP} alt="hewlett-packard logo" />

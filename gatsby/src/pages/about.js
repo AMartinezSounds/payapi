@@ -8,9 +8,6 @@ import Img from '../components/about-components/Img';
 import BottomForm from '../utils/BottomForm';
 
 const AboutStyle = styled.div`
-  background-image: url(${bg});
-  background-repeat: no-repeat;
-  background-position: 200px -600px;
   @media (min-width: 500px) {
     background-position: 300px -600px;
   }
@@ -18,7 +15,8 @@ const AboutStyle = styled.div`
     padding-top: 6rem;
     color: var(--san-juan-blue);
     font-size: 3.5rem;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 86%;
     text-align: center;
     line-height: 4rem;
@@ -32,8 +30,10 @@ const AboutStyle = styled.div`
     }
   }
   @media (min-width: 1000px) {
-    margin-inline: auto;
+    margin-left: auto;
+    margin-rigth: auto;
     .title-page {
+      padding-top: 8rem;
       width: 70%;
       font-size: 4.4rem;
       text-align: left;
@@ -41,7 +41,7 @@ const AboutStyle = styled.div`
   }
   @media (min-width: 1300px) {
     background-image: url(${bg}), url(${bg});
-    background-position: 800px -600px, -500px 400px;
+    background-position: 800px -600px, -500px 400px !important;
   }
 `;
 
@@ -59,7 +59,7 @@ function about() {
   const description4 =
     "We're all passionate about building a more efficient and inclusive financial infrastructure together. At PayAPI, we have diverse backgrounds and skills.";
   return (
-    <AboutStyle>
+    <AboutStyle className="pageBackground">
       <h3 className="title-page">
         We empower innovators by delivering access to the financial system
       </h3>

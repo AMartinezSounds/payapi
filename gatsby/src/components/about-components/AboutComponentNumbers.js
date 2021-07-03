@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const AboutComponentNumbersStyle = styled.div`
   height: 398px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   &::before {
     margin-top: 2rem;
@@ -22,8 +20,6 @@ const AboutComponentNumbersStyle = styled.div`
   }
   .numbers {
     width: 86%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     p {
@@ -41,8 +37,10 @@ const AboutComponentNumbersStyle = styled.div`
   }
   @media (min-width: 1300px) {
     width: 77.08%;
-    margin-inline: auto;
-    margin-block: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12rem;
+    margin-bottom: 12rem;
     &::before,
     &::after {
       display: none;
@@ -70,16 +68,16 @@ const AboutComponentNumbersStyle = styled.div`
 
 function AboutComponentNumbers() {
   return (
-    <AboutComponentNumbersStyle>
-      <div className="numbers">
+    <AboutComponentNumbersStyle className="flexColumn">
+      <div className="flexColumn numbers">
         <p>Team Members</p>
         <h2>300+</h2>
       </div>
-      <div className="numbers">
+      <div className="flexColumn numbers">
         <p>Offices in the UK</p>
         <h2>3</h2>
       </div>
-      <div className="numbers">
+      <div className="flexColumn numbers">
         <p>Transactions analyzed</p>
         <h2>10M+</h2>
       </div>

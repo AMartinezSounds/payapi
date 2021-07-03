@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import phone from '../../../assets/images/illustration-phone-mockup.inline.svg';
 
@@ -13,12 +14,13 @@ const TopDesktopStyle = styled.div`
     justify-content: space-evenly;
     h1 {
       margin-bottom: 2.5rem;
+      color: var(--san-juan-blue);
     }
     p {
       margin-left: 2.6rem;
       color: var(--lightSan-juan-blue);
     }
-    span {
+    a {
       color: var(--san-juan-blue);
     }
   }
@@ -37,7 +39,7 @@ function TopDesktop() {
         <h1>Start building with our APIs for absolutely free.</h1>
         <EmailForm />
         <p>
-          Have any questions? <span>Contact Us</span>
+          Have any questions? <Link to="/contact">Contact Us</Link>
         </p>
       </Formulary>
     </TopDesktopStyle>
