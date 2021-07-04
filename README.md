@@ -102,8 +102,6 @@ const excludedFeatures = (all, included) => {
 };
 ```
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
 I still have to learn to write cleaner code. I felt comfortable working with all the technologies except for React Final Form. I consider it difficult to get use to it but it is well worth. 
