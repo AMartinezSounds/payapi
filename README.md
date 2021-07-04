@@ -2,9 +2,7 @@
 For the moment I consider this project finished. I'm going to clean the code as soon as possible.
 
 
-# Frontend Mentor - PayAPI multi-page website solution
-
-This is a solution to the [PayAPI multi-page website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/payapi-multipage-website-FDLR1Y11e).
+# PayAPI multi-page website 
 
 ## Table of contents
 
@@ -37,16 +35,9 @@ Users should be able to:
 ![screenshot of home](https://github.com/AMartinezSounds/payapi/blob/main/screenshot-main.png)
 
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://alfredo-martinez-paypi.netlify.app
 
 ## My process
 
@@ -58,29 +49,57 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
+- [Gatsby](https://www.gatsbyjs.com) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
+- [react-reveal](https://www.react-reveal.com) - For animation
+- [react-final-form] (https://final-form.org/react) - For formulary
+- [Netlify] (https://app.netlify.com/teams/alfre-canos13/overview) - Deployment
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I'm really proud of some functions:
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const features = [
+  'Transactions',
+  'Auth',
+  'Identity',
+  'Investments',
+  'Assets',
+  'Liabilities',
+  'Income',
+];
+
+const maxFeatures = (allFeatures, index) => {
+  const planFeatures = [];
+  for (let i = 0; i < index; i++) {
+    planFeatures.push(allFeatures[i]);
+  }
+  return planFeatures;
+};
+
+const includedFeatures = (plan) => {
+  if (plan === 'Free Plan') {
+    return maxFeatures(features, 3);
+  }
+  if (plan === 'Basic Plan') {
+    return maxFeatures(features, 5);
+  }
+  if (plan === 'Premium Plan') {
+    return maxFeatures(features, 7);
+  }
+};
+
+const excludedFeatures = (all, included) => {
+  const filtered = all.filter((el) => included.indexOf(el) === -1);
+  return filtered;
+};
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
