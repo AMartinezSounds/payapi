@@ -60,11 +60,12 @@ Users should be able to:
 
 I'm really proud of some functions:
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
+- First, there is an array of strings that represent all plans characteristics:
+- Second, is a function that takes as arguments an array of strings and a number. The array is features and the number is how many features of the array will be pushed in the new array planFeatures.
+- Third, is a function that takes a string as an argument. Depending on which plan you specify, it will call the previous function with a preset data.
+- Last function takes two arrays of strings, it compares one each other, and returns another array with the different elements.
+
 ```js
 const features = [
   'Transactions',
@@ -101,8 +102,6 @@ const excludedFeatures = (all, included) => {
   return filtered;
 };
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
