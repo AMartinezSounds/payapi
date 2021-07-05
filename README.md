@@ -51,8 +51,8 @@ Users should be able to:
 - [Gatsby](https://www.gatsbyjs.com) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
 - [react-reveal](https://www.react-reveal.com) - For animation
-- [react-final-form] (https://final-form.org/react) - For formulary
-- [Netlify] (https://app.netlify.com/teams/alfre-canos13/overview) - Deployment
+- [react-final-form](https://final-form.org/react) - For formulary
+- [Netlify](https://app.netlify.com/teams/alfre-canos13/overview) - Deployment
 
 
 ### What I learned
